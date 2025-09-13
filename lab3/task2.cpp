@@ -5,14 +5,14 @@ class Node {
     public:
     string title;
     Node *next;
-    Node(string t) : title(t), next(nullptr) {}
+    Node(string t) : title(t), next(NULL) {}
 };
 class LibraryCatalog{
     private:
     Node *head;
     Node *tail;
     public:
-    LibraryCatalog() : head(nullptr), tail(nullptr) {}
+    LibraryCatalog() : head(NULL), tail(NULL) {}
 
     void addBook(const string& book){
         Node *newNode = new Node(book);
