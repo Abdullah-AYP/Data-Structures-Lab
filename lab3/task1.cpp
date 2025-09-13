@@ -12,10 +12,10 @@ private:
     Node* head;
 public:
     BookList() : head(nullptr) {
-       pushfront("Object Oriented Programming");
-       pushfront("Linear Algebra");
-       pushfront("Discrete Structures");
-       pushfront("Data Structures and Algorithms");
+       pushfront("Data Structures");
+       pushfront("Operating Systems");
+       pushfront("Computer Network");
+       pushfront("DataBase Systems");
     }
     void pushfront(const string& book) {
         Node* newNode = new Node(book);
@@ -71,10 +71,10 @@ public:
 };
 int main() {
     BookList bl;
-    bl.pushfront("Sociology");
-    bl.pushback("Calculus");
-    bl.insert_after("Object Oriented Programming", "Discrete Structures");
-    cout << "Search for 'Linear ALgebra': " << (bl.search("Linear Algebra") ? "Found" : "Not Found") << endl;
+    bl.pushfront("Artificial Intelligence");
+    bl.pushback("Machine learning");
+    bl.insert_after("Operating Systems", "Cyber Security");
+    cout << "Search for 'Database Systems': " << (bl.search("Database Systems") ? "Found" : "Not Found") << endl;
     cout << "Book List: ";
     bl.display();
     return 0;
