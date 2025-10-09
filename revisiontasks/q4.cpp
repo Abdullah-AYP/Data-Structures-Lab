@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+#define N 4
+
+int grid[N][N]={
+    {1,1,0,1},
+    {0,1,1,0},
+    {1,1,0,1},
+    {0,1,1,1}
+};
+int sol[N][N]={0};
+bool isSafe(int x,int y){
+    return(x>=0 && x<N && y>=0 && y<N && grid[x][y]==1);
+}
+bool solveMaze(int x,int y){
+    if(x==N-1 && y==N-1){
+        sol[x][y]=1;
+        return true;
+    }
+    if(isSafe(x,y)){
+        sol[x][y]=1;
+        if(solveMaze(x+1,y))return true;
+        if(solveMaze(x,y+1))return true;
+        sol[x][y]=0;
+        return false;
+    }
+    return false;
+}
+int main(){
+    if (solveMaze(0,0)){
+        cout << "Safe path:\n";
+        for(int i =0;i<N;i++){
+            for(int j=0;j<N;j++){
+                cout<< sol[i][j]<< " ";
+            }
+            cout << endl;
+        }
+    }else cout <<"No safe path found";
+}
