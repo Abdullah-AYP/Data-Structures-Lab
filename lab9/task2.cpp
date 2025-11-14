@@ -85,9 +85,6 @@ public:
         preorder(node->right);
     }
 };
-#include <iostream>
-using namespace std;
-
 int main() {
     AVLTree avl;
 
