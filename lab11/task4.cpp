@@ -49,6 +49,11 @@ int main() {
     StudentHashTable s;
     s.insert(10, "Abdullah");
     s.insert(25, "Hassan"); 
-    s.search(25);
+    s.insert(40, "Rameel"); 
+    cout << "\nSearch:" << endl;
+    s.search(10); 
+    s.search(25); 
+    s.search(40); 
+    s.search(100); 
     return 0;
 }
